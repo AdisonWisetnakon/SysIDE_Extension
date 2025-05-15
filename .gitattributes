@@ -1,0 +1,3 @@
+# https://stackoverflow.com/a/44048077/20107711
+# try ignoring diffs on generated files
+packages/syside-languageserver/src/generated/** -diff
