@@ -191,6 +191,7 @@ export function createTransport(
 export function createTransport(
     options: TransportOptions
 ): [MessageReader, MessageWriter] | [NodeJS.ReadableStream, NodeJS.WritableStream] {
+    console.log(options);
     if ("nodeIpc" in options) {
         return [new IPCMessageReader(process), new IPCMessageWriter(process)];
     }
