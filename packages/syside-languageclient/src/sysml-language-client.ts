@@ -68,6 +68,7 @@ export abstract class SysMLClientExtender {
      */
     private installTextEditorCommandsHandler(client: GenericLanguageClient): void {
         client.onRequest(RegisterTextEditorCommandsRequest.type, (message) => {
+            console.log(message);
             message.commands.forEach((command) =>
                 this.registerTextEditorCommand(command, (editor) =>
                     client.sendRequest(ExecuteCommandRequest.type, { command, arguments: [editor] })
@@ -159,6 +160,7 @@ export abstract class SysMLClientExtender {
      * Perform client initialization
      */
     private async initializeClient(): Promise<void> {
+        console.log("Initializeclient function call");
         let config = await this.loadConfig();
 
         if (
